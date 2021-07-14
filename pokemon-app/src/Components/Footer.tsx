@@ -2,12 +2,7 @@ import { Container, Row } from 'reactstrap'
 
 function Footer() {
 	return (
-		<footer
-			style={{
-				backgroundColor: '#F5DB13',
-				height: '109px'
-			}}
-		>
+		<footer>
 			<Container
 				style={{
 					display: 'flex',

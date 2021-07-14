@@ -30,7 +30,7 @@ function Pokedex() {
 					</Col>
 				</Row>
 
-				<Row xs="3">
+				<Row lg="4" md="3" sm="2" xs="1">
 					<Col>
 						<CardPokemon />
 					</Col>

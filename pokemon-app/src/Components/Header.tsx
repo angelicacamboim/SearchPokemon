@@ -12,7 +12,7 @@ function Header() {
 		>
 			<Navbar tag={Container} className="justify-content-between" expand="md">
 				<NavbarBrand href="/">
-					<img src={Logo} alt="Logo" width="150px" />
+					<img src={Logo} alt="Logo" width="130px" />
 				</NavbarBrand>
 
 				<Nav>

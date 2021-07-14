@@ -15,7 +15,8 @@ function Home() {
 			>
 				<Container>
 					<Row
-						xs="6"
+						lg="2"
+						md="1"
 						style={{
 							display: 'flex',
 							alignItems: 'center'
@@ -40,13 +41,14 @@ function Home() {
 								See pokemons
 							</Button>
 						</Col>
-						<Col>
+						<Col className="d-none d-lg-block d-md-block">
 							<img src={Banner} alt="Banner" width="500px" height="428px" />
 						</Col>
 					</Row>
 				</Container>
+
+				<Footer />
 			</main>
-			<Footer />
 		</>
 	)
 }
