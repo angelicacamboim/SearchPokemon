@@ -8,7 +8,7 @@ import {
 } from 'reactstrap'
 import PokemonImage from '../assets/images/pokemon_example.svg'
 
-const CardPokemon = () => {
+function CardPokemon() {
 	return (
 		<div>
 			<Card className="shadow mb-5 bg-body rounded">
@@ -24,9 +24,7 @@ const CardPokemon = () => {
 				/>
 				<CardBody>
 					<CardTitle tag="h4">MeoTwo</CardTitle>
-					<CardSubtitle tag="h6" className="mb-2 text-muted">
-						Generation I
-					</CardSubtitle>
+
 					<Button color="info" pill style={{ marginRight: '10px' }}>
 						Info
 					</Button>

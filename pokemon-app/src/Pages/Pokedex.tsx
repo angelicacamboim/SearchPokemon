@@ -30,17 +30,17 @@ function Pokedex() {
 					</Col>
 				</Row>
 
-				<Row>
-					<Col xs="3">
+				<Row xs="3">
+					<Col>
 						<CardPokemon />
 					</Col>
-					<Col xs="3">
+					<Col>
 						<CardPokemon />
 					</Col>
-					<Col xs="3">
+					<Col>
 						<CardPokemon />
 					</Col>
-					<Col xs="3">
+					<Col>
 						<CardPokemon />
 					</Col>
 				</Row>

@@ -15,12 +15,13 @@ function Home() {
 			>
 				<Container>
 					<Row
+						xs="6"
 						style={{
 							display: 'flex',
 							alignItems: 'center'
 						}}
 					>
-						<Col xs="6">
+						<Col>
 							<h1>Find all your favorite Pokemon</h1>
 							<p
 								style={{
@@ -39,7 +40,7 @@ function Home() {
 								See pokemons
 							</Button>
 						</Col>
-						<Col xs="6">
+						<Col>
 							<img src={Banner} alt="Banner" width="500px" height="428px" />
 						</Col>
 					</Row>
