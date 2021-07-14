@@ -5,7 +5,7 @@ import PokemonDetails from './Pages/PokemonDetails'
 function App() {
 	return (
 		<>
-			<PokemonDetails />
+			<Pokedex />
 		</>
 	)
 }

@@ -3,23 +3,23 @@ import Logo from '../assets/images/logo.svg'
 
 function Header() {
 	return (
-		<div
+		<header
 			style={{
 				backgroundColor: '#F5DB13',
 				display: 'flex',
-				flexDirection: 'row',
+				flexDirection: 'row'
 			}}
 		>
 			<Navbar tag={Container} className="justify-content-between" expand="md">
 				<NavbarBrand href="/">
-					<img src={Logo} alt="Logo" width="100px" />
+					<img src={Logo} alt="Logo" width="150px" />
 				</NavbarBrand>
 
 				<Nav>
 					<Button>Theme Color</Button>
 				</Nav>
 			</Navbar>
-		</div>
+		</header>
 	)
 }
 
