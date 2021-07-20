@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import {
 	Container,
 	Col,
@@ -6,13 +6,15 @@ import {
 	CardImg,
 	Card,
 	CardBody,
-	Progress
+	Progress,
+	Button
 } from 'reactstrap'
 import { CardPokemon } from '../Components/CardPokemon'
 import { usePokemon } from '../hooks/usePokemon'
 import { usePokemonSpecies } from '../hooks/usePokemonSpecies'
 
 import {} from 'reactstrap'
+import { Footer } from '../Components/Footer'
 
 type NameParams = {
 	namePokemon: string
@@ -164,7 +166,11 @@ export function PokemonDetails() {
 						  ))
 						: ''}
 				</Row>
+				<Button tag={Link} to="/pokedex">
+					Back
+				</Button>
 			</Container>
+			<Footer />
 		</>
 	)
 }

@@ -1,15 +1,18 @@
 import { Container, Row, Col, Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
-import Logo from '../assets/images/logo.svg'
 import Banner from '../assets/images/banner.svg'
+import { Header } from '../Components/Header'
+import { Footer } from '../Components/Footer'
 
 export function Home() {
 	return (
 		<>
+			<Header />
 			<main
 				style={{
-					backgroundColor: '#F5DB13'
+					backgroundColor: '#F5DB13',
+					height: '100vh'
 				}}
 			>
 				<Container>
@@ -47,6 +50,7 @@ export function Home() {
 						</Col>
 					</Row>
 				</Container>
+				<Footer />
 			</main>
 		</>
 	)

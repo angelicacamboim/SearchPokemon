@@ -3,6 +3,8 @@ import { useCallback, useEffect, useState } from 'react'
 import { Container, Col, Row, Input, Button, Spinner } from 'reactstrap'
 
 import { CardPokemon } from '../Components/CardPokemon'
+import { Footer } from '../Components/Footer'
+import { Header } from '../Components/Header'
 
 type listPokemonState = {
 	name?: string | undefined
@@ -67,6 +69,8 @@ export function Pokedex() {
 
 	return (
 		<>
+			<Header />
+
 			<Container>
 				<Row>
 					<Col style={{ textAlign: 'center', marginTop: '50px' }}>
@@ -129,6 +133,7 @@ export function Pokedex() {
 					</Col>
 				</Row>
 			</Container>
+			<Footer />
 		</>
 	)
 }
