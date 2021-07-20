@@ -3,13 +3,7 @@ import Logo from '../assets/images/logo.svg'
 
 export function Header() {
 	return (
-		<header
-			style={{
-				backgroundColor: '#F5DB13',
-				display: 'flex',
-				flexDirection: 'row'
-			}}
-		>
+		<header className="color-sun_yellow border-bottom border-1 d-flex flex-row">
 			<Navbar tag={Container} className="justify-content-between" expand="md">
 				<NavbarBrand href="/">
 					<img src={Logo} alt="Logo" width="130px" />

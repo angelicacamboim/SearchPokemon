@@ -3,8 +3,6 @@ import { useCallback, useEffect, useState } from 'react'
 import { Container, Col, Row, Input, Button, Spinner } from 'reactstrap'
 
 import { CardPokemon } from '../Components/CardPokemon'
-import { Footer } from '../Components/Footer'
-import { Header } from '../Components/Header'
 
 type listPokemonState = {
 	name?: string | undefined
@@ -69,23 +67,17 @@ export function Pokedex() {
 
 	return (
 		<>
-			<Header />
-
-			<Container>
+			<Container className="mt-5">
 				<Row>
-					<Col style={{ textAlign: 'center', marginTop: '50px' }}>
-						<h2>800 Pokemons for you to choose your favorite</h2>
+					<Col>
+						<h2 className="text-center">
+							800 Pokemons for you to choose your favorite
+						</h2>
 					</Col>
 				</Row>
 
 				<Row>
-					<Col
-						style={{
-							textAlign: 'center',
-							marginTop: '30px',
-							marginBottom: '50px'
-						}}
-					>
+					<Col className="mt-5 mb-5">
 						<Input
 							className="border-secondary rounded-pill pr-5"
 							id="search"
@@ -103,7 +95,7 @@ export function Pokedex() {
 					{!loading ? (
 						pokemon &&
 						pokemon.map((pokemon, index) => (
-							<Col style={{ padding: '10px' }} key={index}>
+							<Col className="p-10" key={index}>
 								<CardPokemon cardName={pokemon.name} />
 							</Col>
 						))
@@ -123,17 +115,13 @@ export function Pokedex() {
 				</Row>
 
 				<Row>
-					<Col style={{ textAlign: 'center', marginTop: '30px' }}>
-						<Button
-							style={{ backgroundColor: '#F5DB13', color: 'black' }}
-							onClick={() => handleMorePokemons()}
-						>
+					<Col className="text-center mt-5">
+						<Button className="color-red" onClick={() => handleMorePokemons()}>
 							See More
 						</Button>
 					</Col>
 				</Row>
 			</Container>
-			<Footer />
 		</>
 	)
 }

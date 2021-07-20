@@ -13,9 +13,6 @@ import { CardPokemon } from '../Components/CardPokemon'
 import { usePokemon } from '../hooks/usePokemon'
 import { usePokemonSpecies } from '../hooks/usePokemonSpecies'
 
-import {} from 'reactstrap'
-import { Footer } from '../Components/Footer'
-
 type NameParams = {
 	namePokemon: string
 }
@@ -28,55 +25,23 @@ export function PokemonDetails() {
 	return (
 		<>
 			<Container>
-				<h1 style={{ marginTop: '30px' }}>{pokemon?.name}</h1>
+				<h1 className="mt-4">{pokemon?.name}</h1>
 
-				<Card
-					className="shadow mb-5 bg-body rounded"
-					style={{ marginTop: '30px' }}
-					key={pokemon?.id}
-				>
+				<Card className="shadow mb-5 mt-4 bg-body rounded" key={pokemon?.id}>
 					<Row lg="2" md="1" sm="1" xs="1">
-						<Col style={{ padding: '0 0' }}>
+						<Col className="p-0">
 							<CardImg
-								style={{
-									backgroundImage:
-										'linear-gradient(to right top, #B57E10, #B57E10, #F9DF7B, #FFF3A6, #F9DF7B, #B57E10)'
-								}}
-								top
+								className="color-card"
 								width="100%"
 								height="450px"
 								src={pokemon?.image}
 								alt="Card image cap"
 							/>
 						</Col>
-						<Col
-							style={{
-								padding: '0 0',
-								margin: '0 0',
-								backgroundColor: '#F5F6F8'
-							}}
-						>
+						<Col className="color-white p-0 m-0">
 							<CardBody>
-								<h3
-									style={{
-										marginTop: '10px',
-										marginBottom: '30px',
-										textAlign: 'center'
-									}}
-								>
-									{pokemon?.name}
-								</h3>
-								<Row
-									lg="34"
-									md="4"
-									sm="4"
-									xs="2"
-									style={{
-										marginTop: '10px',
-										display: 'flex',
-										alignItems: 'center'
-									}}
-								>
+								<h3 className="mt-3 mb-4 text-center">{pokemon?.name}</h3>
+								<Row className=" m-2 " lg="34" md="4" sm="4" xs="3">
 									<Col>
 										<h6>Weight</h6>
 										<p>{pokemon?.weight}kg</p>
@@ -117,20 +82,9 @@ export function PokemonDetails() {
 									</Col>
 								</Row>
 
-								<Row
-									lg="2"
-									md="3"
-									sm="3"
-									xs="3"
-									style={{
-										marginTop: '20px',
-										marginBottom: '20px',
-										display: 'flex',
-										alignItems: 'center'
-									}}
-								>
+								<Row lg="2" md="3" sm="3" xs="3" className="mt-5">
 									{pokemon?.stats.map((stats, index) => (
-										<Col key={index}>
+										<Col key={index} className="mb-3">
 											<h6>{stats.stat.name}</h6>
 											<Progress color="warning" value={stats.base_stat}>
 												{stats.base_stat}
@@ -145,7 +99,7 @@ export function PokemonDetails() {
 
 				<h3>Evolution Line</h3>
 
-				<Row lg="3" md="3" sm="2" xs="1" style={{ marginTop: '20px' }}>
+				<Row lg="3" md="3" sm="2" xs="1" className="mt-5">
 					<Col>
 						<CardPokemon cardName={evolutionLine?.evolution.name} />
 					</Col>
@@ -170,7 +124,6 @@ export function PokemonDetails() {
 					Back
 				</Button>
 			</Container>
-			<Footer />
 		</>
 	)
 }

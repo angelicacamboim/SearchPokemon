@@ -2,46 +2,25 @@ import { Container, Row, Col, Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
 import Banner from '../assets/images/banner.svg'
-import { Header } from '../Components/Header'
-import { Footer } from '../Components/Footer'
 
 export function Home() {
 	return (
 		<>
-			<Header />
 			<main
+				className="color-sun_yellow  m-0"
 				style={{
-					backgroundColor: '#F5DB13',
 					height: '100vh'
 				}}
 			>
 				<Container>
-					<Row
-						lg="2"
-						md="1"
-						style={{
-							display: 'flex',
-							alignItems: 'center'
-						}}
-					>
-						<Col>
+					<Row lg="2" md="1" className="d-flex align-items-center">
+						<Col className="mt-5">
 							<h1>Find all your favorite Pokemon</h1>
-							<p
-								style={{
-									marginTop: '40px',
-									marginBottom: '40px'
-								}}
-							>
+							<p className="mt-5 mb-5">
 								You can know the type of Pokemon, its strengths, disadvantages
 								and abilities
 							</p>
-							<Button
-								tag={Link}
-								to="/pokedex"
-								style={{
-									backgroundColor: '#C5312A'
-								}}
-							>
+							<Button className="color-red" tag={Link} to="/pokedex">
 								See pokemons
 							</Button>
 						</Col>
@@ -50,7 +29,6 @@ export function Home() {
 						</Col>
 					</Row>
 				</Container>
-				<Footer />
 			</main>
 		</>
 	)

@@ -2,18 +2,9 @@ import { Container, Row } from 'reactstrap'
 
 export function Footer() {
 	return (
-		<footer>
-			<Container
-				style={{
-					display: 'flex',
-					justifyContent: 'flex-start'
-				}}
-			>
-				<Row
-					style={{
-						marginTop: '50px'
-					}}
-				>
+		<footer className="color-white">
+			<Container className="d-flex justify-content-start">
+				<Row className="mt-5">
 					<p>Make with ❤️ for Angelica Bayer</p>
 				</Row>
 			</Container>

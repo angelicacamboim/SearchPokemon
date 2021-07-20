@@ -36,7 +36,7 @@ export function CardPokemon(props: PokemonProps) {
 					src={pokemon?.image}
 					alt="Card image cap"
 				/>
-				<CardBody style={{ backgroundColor: '#F5F6F8' }}>
+				<CardBody className="color-white">
 					<CardTitle style={{ color: '#29292e' }} tag="h4">
 						{pokemon?.name}
 					</CardTitle>
