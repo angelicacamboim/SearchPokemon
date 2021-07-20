@@ -48,7 +48,7 @@ export function PokemonDetails() {
 										<h3 className="mt-3 mb-4 text-center text-capitalize">
 											{pokemon?.name}
 										</h3>
-										<Row className=" m-2 " lg="34" md="4" sm="4" xs="3">
+										<Row lg="34" md="4" sm="4" xs="3">
 											<Col>
 												<h6>Weight</h6>
 												<p>{pokemon?.weight}kg</p>
