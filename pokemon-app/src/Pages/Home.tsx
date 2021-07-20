@@ -1,13 +1,12 @@
 import { Container, Row, Col, Button } from 'reactstrap'
+import { Link } from 'react-router-dom'
+
 import Logo from '../assets/images/logo.svg'
 import Banner from '../assets/images/banner.svg'
-import Header from '../Components/Header'
-import Footer from '../Components/Footer'
 
-function Home() {
+export function Home() {
 	return (
 		<>
-			<Header />
 			<main
 				style={{
 					backgroundColor: '#F5DB13'
@@ -34,6 +33,8 @@ function Home() {
 								and abilities
 							</p>
 							<Button
+								tag={Link}
+								to="/pokedex"
 								style={{
 									backgroundColor: '#C5312A'
 								}}
@@ -46,11 +47,7 @@ function Home() {
 						</Col>
 					</Row>
 				</Container>
-
-				<Footer />
 			</main>
 		</>
 	)
 }
-
-export default Home

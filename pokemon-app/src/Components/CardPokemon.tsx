@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import {
 	Card,
 	CardImg,
@@ -6,12 +8,24 @@ import {
 	CardSubtitle,
 	Button
 } from 'reactstrap'
-import PokemonImage from '../assets/images/pokemon_example.svg'
+import { usePokemon } from '../hooks/usePokemon'
 
-function CardPokemon() {
+type PokemonProps = {
+	cardName?: string | undefined
+}
+
+export function CardPokemon(props: PokemonProps) {
+	const { pokemon } = usePokemon(props.cardName)
+
 	return (
 		<div>
-			<Card className="shadow mb-5 bg-body rounded">
+			<Card
+				className="shadow mb-5 bg-body rounded"
+				tag={Link}
+				to={`/pokemon/${pokemon?.nameLink}`}
+				key={pokemon?.id}
+				style={{ border: '0px', textDecoration: 'none' }}
+			>
 				<CardImg
 					style={{
 						backgroundImage:
@@ -19,22 +33,21 @@ function CardPokemon() {
 					}}
 					top
 					width="100%"
-					src={PokemonImage}
+					src={pokemon?.image}
 					alt="Card image cap"
 				/>
-				<CardBody>
-					<CardTitle tag="h4">MeoTwo</CardTitle>
-
-					<Button color="info" pill style={{ marginRight: '10px' }}>
-						Info
-					</Button>
-					<Button color="info" pill>
-						Fire
-					</Button>
+				<CardBody style={{ backgroundColor: '#F5F6F8' }}>
+					<CardTitle style={{ color: '#29292e' }} tag="h4">
+						{pokemon?.name}
+					</CardTitle>
+					{pokemon?.types.map((types, index) => (
+						<span
+							className={`type ${types.type.name}`}
+							style={{ marginRight: '5px' }}
+						></span>
+					))}
 				</CardBody>
 			</Card>
 		</div>
 	)
 }
-
-export default CardPokemon

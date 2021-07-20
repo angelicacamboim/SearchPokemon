@@ -1,7 +1,7 @@
 import { Container, Nav, Navbar, NavbarBrand, Button } from 'reactstrap'
 import Logo from '../assets/images/logo.svg'
 
-function Header() {
+export function Header() {
 	return (
 		<header
 			style={{
@@ -22,5 +22,3 @@ function Header() {
 		</header>
 	)
 }
-
-export default Header

@@ -1,6 +1,6 @@
 import { Container, Row } from 'reactstrap'
 
-function Footer() {
+export function Footer() {
 	return (
 		<footer>
 			<Container
@@ -20,5 +20,3 @@ function Footer() {
 		</footer>
 	)
 }
-
-export default Footer
