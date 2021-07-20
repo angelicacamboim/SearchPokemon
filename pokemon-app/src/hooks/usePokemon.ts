@@ -23,7 +23,6 @@ type Stat = {
 type Pokemon =  { 
 	id: number,
 	name: string,
-    nameLink: string,
   height: number,
   weight: number,
   abilities: Array<Ability>,
@@ -46,12 +45,14 @@ export function usePokemon(cardName: string | undefined) {
 
 			const { id, name, height,weight, abilities, types, stats} = response.data;
 
+            let divideHeight = height/10
+            let divideWeight = weight/10
+
 			setPokemon({
 				id,
-				name: name.charAt(0).toUpperCase() + name.slice(1),
-                nameLink: name,
-				height,
-                weight,
+				name,
+				height: divideHeight,
+                weight: divideWeight,
                 abilities,
 				types,
                 stats,

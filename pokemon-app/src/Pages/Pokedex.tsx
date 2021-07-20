@@ -93,7 +93,6 @@ export function Pokedex() {
 
 				<Row lg="4" md="3" sm="2" xs="1">
 					{!loading ? (
-						pokemon &&
 						pokemon.map((pokemon, index) => (
 							<Col className="p-10" key={index}>
 								<CardPokemon cardName={pokemon.name} />
@@ -102,6 +101,7 @@ export function Pokedex() {
 					) : (
 						<Col>
 							<Spinner
+								color="danger"
 								style={{
 									width: '3rem',
 									height: '3rem',

@@ -22,7 +22,7 @@ export function CardPokemon(props: PokemonProps) {
 			<Card
 				className="shadow mb-5 bg-body rounded"
 				tag={Link}
-				to={`/pokemon/${pokemon?.nameLink}`}
+				to={`/pokemon/${pokemon?.name}`}
 				key={pokemon?.id}
 				style={{ border: '0px', textDecoration: 'none' }}
 			>
@@ -37,7 +37,11 @@ export function CardPokemon(props: PokemonProps) {
 					alt="Card image cap"
 				/>
 				<CardBody className="color-white">
-					<CardTitle style={{ color: '#29292e' }} tag="h4">
+					<CardTitle
+						style={{ color: '#29292e' }}
+						tag="h4"
+						className="text-capitalize mb-4"
+					>
 						{pokemon?.name}
 					</CardTitle>
 					{pokemon?.types.map((types, index) => (
