@@ -77,6 +77,7 @@ export function PokemonDetails() {
 												{pokemon?.abilities.map((ability, index) => (
 													<span className="text-capitalize" key={index}>
 														{ability.ability.name}
+														<br></br>
 													</span>
 												))}
 											</Col>
