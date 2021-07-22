@@ -7,7 +7,7 @@ interface BoxProps {
   }
 
   export const StyledCardImg = styled(CardImg)<BoxProps>`
-  background: ${props => props.color};
+  background: linear-gradient(#F0FFF0, ${props => props.color});
 
 `
 export const StyledCard = styled(Card)`
