@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom'
 import { Footer } from './Components/Footer'
 import { Header } from './Components/Header'
 
@@ -11,7 +11,6 @@ import { ThemeProvider, DefaultTheme } from 'styled-components'
 import light from './styles/themes/light'
 import dark from './styles/themes/dark'
 import usePeristedState from './hooks/usePersistedState'
-import { useState } from 'react'
 
 export function App() {
 	const [theme, setTheme] = usePeristedState<DefaultTheme>('theme', light)
@@ -21,18 +20,20 @@ export function App() {
 	}
 
 	return (
-		<ThemeProvider theme={theme}>
-			<BrowserRouter>
-				<GlobalStyle />
-				<Header toggleTheme={toggleTheme} />
-				<Switch>
-					<Route path={process.env.PUBLIC_URL + '/'} exact component={Home} />
-					<Route path="/pokedex" component={Pokedex} />
-					<Route path="/pokemon/:namePokemon" component={PokemonDetails} />
-					<Route component={Page404} />
-				</Switch>
-				<Footer />
-			</BrowserRouter>
-		</ThemeProvider>
+		<HashRouter basename={process.env.PUBLIC_URL}>
+			<ThemeProvider theme={theme}>
+				<BrowserRouter>
+					<GlobalStyle />
+					<Header toggleTheme={toggleTheme} />
+					<Switch>
+						<Route path={'/'} exact component={Home} />
+						<Route path="/pokedex" component={Pokedex} />
+						<Route path="/pokemon/:namePokemon" component={PokemonDetails} />
+						<Route component={Page404} />
+					</Switch>
+					<Footer />
+				</BrowserRouter>
+			</ThemeProvider>
+		</HashRouter>
 	)
 }
