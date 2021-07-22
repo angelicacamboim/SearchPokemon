@@ -13,6 +13,9 @@ generation: {
   },
   shape: {
     name?: string
+  },
+  color : {
+    name?: string
   }
 }
 
@@ -24,12 +27,12 @@ type PokemonEvolution =  {
     species: {
         name?: string
     }  
-}],
+}] ,
   evolution3:[{
       species: {
           name?: string
       }
-  }]
+  }] 
 }
 
 export function usePokemonSpecies(name: string | undefined) {
@@ -42,22 +45,23 @@ export function usePokemonSpecies(name: string | undefined) {
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${name}`)
        
 
-        const { evolution_chain,generation,habitat, shape } = await response.data;
+        const { evolution_chain,generation,habitat, shape, color } = await response.data;
 
         setPokemonSpecies({
           evolution_chain: evolution_chain? evolution_chain: 'None' ,
           generation: generation ? generation: 'None',
           habitat: habitat ? habitat : 'None',
-          shape: shape ? shape: 'None'
+          shape: shape ? shape: 'None',
+          color: color ? color: 'None'
           })		  
           
           let url = await evolution_chain.url
           const responseEvolution = await axios.get(url)
-      
+
           setEvolutionLine({
-            evolution: responseEvolution.data.chain.species,
-            evolution2: responseEvolution.data.chain.evolves_to,
-            evolution3: responseEvolution.data.chain.evolves_to[0].evolves_to
+            evolution: responseEvolution.data.chain?.species,
+            evolution2: responseEvolution.data.chain?.evolves_to,
+            evolution3: responseEvolution.data.chain.evolves_to[0]?.evolves_to
             })	
      
   

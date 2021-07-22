@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import { StyledLink } from '../styles/colors'
 
 import Banner from '../assets/images/banner.svg'

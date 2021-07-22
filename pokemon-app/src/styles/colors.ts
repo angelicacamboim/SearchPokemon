@@ -1,7 +1,16 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Card, CardImg } from 'reactstrap'
 
-export const CardBackground = styled.div`
+interface BoxProps {
+	color: string;
+  }
+
+  export const StyledCardImg = styled(CardImg)<BoxProps>`
+  background: ${props => props.color};
+
+`
+export const StyledCard = styled(Card)`
   background: ${props => props.theme.colors.primary};
 `;
 
@@ -50,8 +59,14 @@ background-color: #D93E30;
 	color: #fff !important;
 	z-index: -1
 }
+&:hover{
+	color: #fff !important;
+
+}
 &:focus {
   outline: 0;
 	box-shadow: none
 }
 `;
+
+

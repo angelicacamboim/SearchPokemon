@@ -47,6 +47,7 @@ export function usePokemon(cardName: string | undefined) {
 
             let divideHeight = height/10
             let divideWeight = weight/10
+            let imagem = response.data.sprites.other['official-artwork'].front_default
 
 			setPokemon({
 				id,
@@ -56,7 +57,7 @@ export function usePokemon(cardName: string | undefined) {
                 abilities: abilities? abilities : [],
 				types: types? types: [],
                 stats: stats? stats: [],
-				image: response.data.sprites.other['official-artwork'].front_default
+				image: imagem? imagem: ''
 				})	
             }
   

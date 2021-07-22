@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Container, Nav, Navbar, NavbarBrand, Button } from 'reactstrap'
+import { Container, Nav, Navbar, NavbarBrand } from 'reactstrap'
 import Logo from '../assets/images/logo.svg'
 import Switch from 'react-switch'
 import { ThemeContext } from 'styled-components'

@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
-import { CardBackground } from '../styles/colors'
+import { StyledCard } from '../styles/colors'
+import Flag_of_None from '../assets/images/Flag_of_None.png'
 
-import { Card, CardImg, CardBody } from 'reactstrap'
+import { Card, CardBody } from 'reactstrap'
 import { usePokemon } from '../hooks/usePokemon'
+import { StyledCardImg } from '../styles/colors'
+import { usePokemonSpecies } from '../hooks/usePokemonSpecies'
 
 type PokemonProps = {
 	cardName?: string | undefined
@@ -10,6 +13,7 @@ type PokemonProps = {
 
 export function CardPokemon(props: PokemonProps) {
 	const { pokemon } = usePokemon(props.cardName)
+	const { pokemonSpecies } = usePokemonSpecies(props.cardName)
 
 	return (
 		<div>
@@ -19,18 +23,15 @@ export function CardPokemon(props: PokemonProps) {
 				style={{ border: '0px', textDecoration: 'none' }}
 			>
 				<Link to={`/pokemon/${pokemon?.name}`}>
-					<CardImg
+					<StyledCardImg
+						color={pokemonSpecies?.color.name}
 						top
 						width="100%"
-						src={pokemon?.image}
+						src={pokemon?.image ? pokemon?.image : Flag_of_None}
 						alt="Card image cap"
-						style={{
-							backgroundImage:
-								'linear-gradient(to right top, #B57E10, #B57E10, #F9DF7B, #FFF3A6, #F9DF7B, #B57E10)'
-						}}
 					/>
 				</Link>
-				<CardBackground>
+				<StyledCard>
 					<CardBody>
 						<h4 className="text-capitalize mb-4">{pokemon?.name}</h4>
 						{pokemon?.types.map((types, index) => (
@@ -41,7 +42,7 @@ export function CardPokemon(props: PokemonProps) {
 							></span>
 						))}
 					</CardBody>
-				</CardBackground>
+				</StyledCard>
 			</Card>
 		</div>
 	)
