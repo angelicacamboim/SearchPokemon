@@ -1,7 +1,7 @@
-import axios from 'axios'
 import { useCallback, useEffect, useState } from 'react'
-import { Container, Col, Row, Input, Spinner } from 'reactstrap'
+import { Container, Col, Row, Input } from 'reactstrap'
 import { StyledLink } from '../styles/colors'
+import { api } from '../api/api'
 
 import { CardPokemon } from '../Components/CardPokemon'
 
@@ -21,9 +21,7 @@ export function Pokedex() {
 	const pokemonSearch = useCallback(async () => {
 		let isSubscribed = true
 
-		const response = await axios.get(
-			`https://pokeapi.co/api/v2/pokemon/?limit=${NUMBER_MAX_POKEMONS_API}`
-		)
+		const response = await api.get(`pokemon/?limit=${NUMBER_MAX_POKEMONS_API}`)
 
 		if (isSubscribed) {
 			const pokemonsSearch = await response.data.results.filter(
@@ -39,9 +37,7 @@ export function Pokedex() {
 	}, [searchPokemon])
 
 	const pokemonDefaultList = useCallback(async () => {
-		const response = await axios.get(
-			`https://pokeapi.co/api/v2/pokemon?&limit=${NUMBER_POKEMONS}&offset=0`
-		)
+		const response = await api.get(`pokemon?&limit=${NUMBER_POKEMONS}&offset=0`)
 		setLoading(false)
 		setPokemon(response.data.results)
 	}, [])
@@ -58,8 +54,8 @@ export function Pokedex() {
 	const handleMorePokemons = useCallback(async () => {
 		setOffset((offset) => offset + NUMBER_POKEMONS)
 
-		const response = await axios.get(
-			`https://pokeapi.co/api/v2/pokemon?&limit=${NUMBER_POKEMONS}&offset=${offset}`
+		const response = await api.get(
+			`pokemon?&limit=${NUMBER_POKEMONS}&offset=${offset}`
 		)
 
 		setPokemon((state) => [...state, ...response.data.results])

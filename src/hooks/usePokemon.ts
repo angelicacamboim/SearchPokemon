@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import {api} from '../api/api'
 
 type Types = {
     type: {
@@ -39,7 +39,7 @@ export function usePokemon(cardName: string | undefined) {
 
     let isSubscribed = true
 
-		axios.get(`https://pokeapi.co/api/v2/pokemon/${cardName}`).then((response) => {
+    api.get(`pokemon/${cardName}`).then((response) => {
            
         if (isSubscribed) {
 

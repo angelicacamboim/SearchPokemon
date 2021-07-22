@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
+import {api} from '../api/api'
 
 type PokemonSpecies =  { 
 evolution_chain: {
@@ -42,7 +42,7 @@ export function usePokemonSpecies(name: string | undefined) {
   
       const pokemonSpeciesAPI = useCallback(async () => {
 
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${name}`)
+        const response = await api.get(`pokemon-species/${name}`)
        
 
         const { evolution_chain,generation,habitat, shape, color } = await response.data;
@@ -56,7 +56,7 @@ export function usePokemonSpecies(name: string | undefined) {
           })		  
           
           let url = await evolution_chain.url
-          const responseEvolution = await axios.get(url)
+          const responseEvolution = await api.get(url)
 
           setEvolutionLine({
             evolution: responseEvolution.data.chain?.species,
