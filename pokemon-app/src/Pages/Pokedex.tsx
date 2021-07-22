@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useCallback, useEffect, useState } from 'react'
-import { Container, Col, Row, Input, Button, Spinner } from 'reactstrap'
+import { Container, Col, Row, Input, Spinner } from 'reactstrap'
+import { StyledLink } from '../styles/colors'
 
 import { CardPokemon } from '../Components/CardPokemon'
 
@@ -30,6 +31,7 @@ export function Pokedex() {
 					name.name.includes(searchPokemon.toLocaleLowerCase())
 			)
 
+			setLoading(false)
 			setPokemon(pokemonsSearch)
 		}
 
@@ -40,16 +42,14 @@ export function Pokedex() {
 		const response = await axios.get(
 			`https://pokeapi.co/api/v2/pokemon?&limit=${NUMBER_POKEMONS}&offset=0`
 		)
-
+		setLoading(false)
 		setPokemon(response.data.results)
 	}, [])
 
 	useEffect(() => {
 		if (searchPokemon.length >= 2) {
-			setLoading(false)
 			pokemonSearch()
 		} else {
-			setLoading(false)
 			pokemonDefaultList()
 		}
 	}, [pokemonSearch, searchPokemon, pokemonDefaultList])
@@ -99,26 +99,27 @@ export function Pokedex() {
 							</Col>
 						))
 					) : (
-						<Col>
-							<Spinner
-								color="danger"
-								style={{
-									width: '3rem',
-									height: '3rem',
-									position: 'fixed',
-									top: '50%',
-									left: '50%'
-								}}
-							/>
+						<Col
+							lg="12"
+							md="12"
+							sm="12"
+							xs="12"
+							className="d-flex justify-content-center"
+						>
+							<div
+								className="spinner-border ml-auto"
+								role="status"
+								aria-hidden="true"
+							></div>
 						</Col>
 					)}
 				</Row>
 
 				<Row>
 					<Col className="text-center mt-5">
-						<Button className="color-red" onClick={() => handleMorePokemons()}>
+						<StyledLink to="#" onClick={() => handleMorePokemons()}>
 							See More
-						</Button>
+						</StyledLink>
 					</Col>
 				</Row>
 			</Container>

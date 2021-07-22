@@ -3,31 +3,31 @@ import { useCallback, useEffect, useState } from "react";
 
 type PokemonSpecies =  { 
 evolution_chain: {
-    url: string
+    url?: string
 },
 generation: {
-    name: string
+    name?: string
 },
   habitat: {
-    name: string
+    name?: string
   },
   shape: {
-    name: string
+    name?: string
   }
 }
 
 type PokemonEvolution =  { 
   evolution: {
-    name: string
+    name?: string
 },
   evolution2: [{
     species: {
-        name: string
+        name?: string
     }  
 }],
   evolution3:[{
       species: {
-          name: string
+          name?: string
       }
   }]
 }
@@ -43,12 +43,12 @@ export function usePokemonSpecies(name: string | undefined) {
        
 
         const { evolution_chain,generation,habitat, shape } = await response.data;
-  
+
         setPokemonSpecies({
-          evolution_chain,
-          generation,
-          habitat,
-          shape
+          evolution_chain: evolution_chain? evolution_chain: 'None' ,
+          generation: generation ? generation: 'None',
+          habitat: habitat ? habitat : 'None',
+          shape: shape ? shape: 'None'
           })		  
           
           let url = await evolution_chain.url
