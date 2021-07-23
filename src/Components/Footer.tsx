@@ -12,13 +12,17 @@ export function Footer() {
 				<div>
 					<a
 						href="https://www.linkedin.com/in/angelicabayer/"
+						target="_blank"
 						className="me-4 text-reset"
+						rel="noreferrer"
 					>
 						<FontAwesomeIcon size="2x" icon={faLinkedin} />
 					</a>
 					<a
 						href="https://github.com/angelicacamboim"
+						target="_blank"
 						className="me-4 text-reset"
+						rel="noreferrer"
 					>
 						<FontAwesomeIcon size="2x" icon={faGithub} />
 					</a>
