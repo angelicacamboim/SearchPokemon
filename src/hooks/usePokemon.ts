@@ -36,36 +36,34 @@ export function usePokemon(cardName: string | undefined) {
     const [pokemon, setPokemon] = useState<Pokemon | undefined>()
  
   useEffect(() => {
+    const getPokemonSpecies = async () => {
+        let isSubscribed = true
 
-    let isSubscribed = true
+        const response = await api.get(`pokemon/${cardName}`)
 
-    api.get(`pokemon/${cardName}`).then((response) => {
-           
         if (isSubscribed) {
 
-			const { id, name, height,weight, abilities, types, stats} = response.data;
-
-            let divideHeight = height/10
-            let divideWeight = weight/10
-            let imagem = response.data.sprites.other['official-artwork'].front_default
-
-			setPokemon({
+            const { id, name, height,weight, abilities, types, stats} =  await response.data;
+           
+            setPokemon({
 				id,
 				name: name ? name: 'None',
-				height: divideHeight ? divideHeight : 0,
-                weight: divideWeight ? divideWeight : 0,
+				height: height ? height/10 : 0,
+                weight: weight ? weight/10 : 0,
                 abilities: abilities? abilities : [],
 				types: types? types: [],
                 stats: stats? stats: [],
-				image: imagem? imagem: ''
+				image: response.data.sprites.other['official-artwork'].front_default
 				})	
             }
+            
   
          return () => isSubscribed = false
 
-		})
-	
+    } 
+    getPokemonSpecies()
+      
   }, [cardName]);
 
-  return { pokemon }
+  return { pokemon}
 }

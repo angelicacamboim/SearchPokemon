@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {api} from '../api/api'
 
 type PokemonSpecies =  { 
@@ -39,11 +39,9 @@ export function usePokemonSpecies(name: string | undefined) {
     const [pokemonSpecies, setPokemonSpecies] = useState<PokemonSpecies>()
     const [evolutionLine, setEvolutionLine] = useState<PokemonEvolution>()
 
-  
-      const pokemonSpeciesAPI = useCallback(async () => {
-
-        const response = await api.get(`pokemon-species/${name}`)
-       
+      useEffect( () => {
+      const getPokemonSpecies = async () => {
+       const response = await api.get(`pokemon-species/${name}`)
 
         const { evolution_chain,generation,habitat, shape, color } = await response.data;
 
@@ -63,13 +61,10 @@ export function usePokemonSpecies(name: string | undefined) {
             evolution2: responseEvolution.data.chain?.evolves_to,
             evolution3: responseEvolution.data.chain.evolves_to[0]?.evolves_to
             })	
-     
   
-      }, [name])
-  
-      useEffect( () => {
-        pokemonSpeciesAPI()
-    }, [pokemonSpeciesAPI])
+        }
+        getPokemonSpecies()
+    }, [name])
 
   return { pokemonSpecies, evolutionLine }
 }

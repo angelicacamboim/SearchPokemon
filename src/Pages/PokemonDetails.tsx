@@ -24,12 +24,14 @@ export function PokemonDetails() {
 	}
 	useEffect(() => {
 		onTop()
-	}, [routePath])
+	}, [routePath, namePokemon])
 
 	return (
 		<>
 			<Container>
-				<h1 className="mt-4 mb-4 text-capitalize">{pokemon?.name}</h1>
+				<h1 className="mt-4 mb-4 text-capitalize">
+					{pokemon?.name} Nº{pokemon?.id}
+				</h1>
 
 				<Row className="mb-5">
 					<Col>
@@ -49,7 +51,8 @@ export function PokemonDetails() {
 										<h3 className="mt-3 mb-4 text-center text-capitalize">
 											{pokemon?.name}
 										</h3>
-										<Row xs="2" sm="3" md="4" lg="4" xl="4">
+
+										<Row xs="3" sm="3" md="4" lg="4" xl="4">
 											<Col>
 												<h6>
 													<strong>Weight</strong>
@@ -72,6 +75,15 @@ export function PokemonDetails() {
 											</Col>
 											<Col>
 												<h6>
+													<strong>Habitat</strong>
+												</h6>
+												<p className="text-capitalize">
+													{pokemonSpecies?.habitat.name}
+												</p>
+											</Col>
+
+											<Col>
+												<h6>
 													<strong>Abilities</strong>
 												</h6>
 												{pokemon?.abilities.map((ability, index) => (
@@ -84,28 +96,13 @@ export function PokemonDetails() {
 											</Col>
 											<Col>
 												<h6>
-													<strong>Habitat</strong>
-												</h6>
-												<p className="text-capitalize">
-													{pokemonSpecies?.habitat.name}
-												</p>
-											</Col>
-
-											<Col>
-												<h6 className="text-capitalize">
-													<strong>{pokemonSpecies?.generation.name}</strong>
-												</h6>
-											</Col>
-											<Col xs="12" sm="6" md="6" lg="6">
-												<h6 className="mb-3">
 													<strong>Types</strong>
 												</h6>
 												{pokemon?.types.map((types, index) => (
-													<span
-														key={index}
-														className={`type ${types.type.name}`}
-														style={{ marginRight: '5px' }}
-													></span>
+													<span className="text-capitalize " key={index}>
+														{types.type.name}
+														<br></br>
+													</span>
 												))}
 											</Col>
 										</Row>

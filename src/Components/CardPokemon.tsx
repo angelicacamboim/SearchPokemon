@@ -33,7 +33,8 @@ export function CardPokemon(props: PokemonProps) {
 				</Link>
 				<StyledCard>
 					<CardBody>
-						<h4 className="text-capitalize mb-4">{pokemon?.name}</h4>
+						<h4 className="text-capitalize">{pokemon?.name}</h4>
+						<p className="text-capitalize">{pokemonSpecies?.generation.name}</p>
 						{pokemon?.types.map((types, index) => (
 							<span
 								key={index}

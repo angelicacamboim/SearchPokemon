@@ -1,17 +1,11 @@
-import { Container, Row, Col, Button } from 'reactstrap'
-import { Link } from 'react-router-dom'
+import { Container, Row, Col } from 'reactstrap'
 
 import NotFound from '../assets/images/404.svg'
 
 export function Page404() {
 	return (
 		<>
-			<main
-				style={{
-					backgroundColor: '#D93E30',
-					height: '100vh'
-				}}
-			>
+			<main>
 				<Container>
 					<Row lg="1" md="1" sm="1" xs="1">
 						<Col
@@ -43,17 +37,7 @@ export function Page404() {
 								display: 'flex',
 								justifyContent: 'center'
 							}}
-						>
-							<Button
-								tag={Link}
-								to="/"
-								style={{
-									backgroundColor: '#F5DB13'
-								}}
-							>
-								Home
-							</Button>
-						</Col>
+						></Col>
 					</Row>
 				</Container>
 			</main>
