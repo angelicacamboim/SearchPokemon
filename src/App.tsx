@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Footer } from './Components/Footer'
 import { Header } from './Components/Header'
 
@@ -20,20 +20,18 @@ export function App() {
 	}
 
 	return (
-		<HashRouter basename={process.env.PUBLIC_URL}>
-			<ThemeProvider theme={theme}>
-				<BrowserRouter>
-					<GlobalStyle />
-					<Header toggleTheme={toggleTheme} />
-					<Switch>
-						<Route path="/" exact component={Home} />
-						<Route path="/pokedex" component={Pokedex} />
-						<Route path="/pokemon/:namePokemon" component={PokemonDetails} />
-						<Route component={Page404} />
-					</Switch>
-					<Footer />
-				</BrowserRouter>
-			</ThemeProvider>
-		</HashRouter>
+		<ThemeProvider theme={theme}>
+			<BrowserRouter>
+				<GlobalStyle />
+				<Header toggleTheme={toggleTheme} />
+				<Switch>
+					<Route path="/" exact component={Home} />
+					<Route path="/pokedex" component={Pokedex} />
+					<Route path="/pokemon/:namePokemon" component={PokemonDetails} />
+					<Route component={Page404} />
+				</Switch>
+				<Footer />
+			</BrowserRouter>
+		</ThemeProvider>
 	)
 }
