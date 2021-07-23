@@ -11,11 +11,11 @@ interface BoxProps {
 
 `
 export const StyledCard = styled(Card)`
-  background: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.secundary};
 `;
 
 export const StyledLink = styled(Link)`
-background-color: #D93E30;
+background-color: ${props => props.theme.colors.primary};
 	-moz-user-select: none;
 	text-transform: capitalize;
 	color: #fff;

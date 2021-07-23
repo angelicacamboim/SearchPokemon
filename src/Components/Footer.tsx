@@ -1,13 +1,31 @@
-import { Container, Row } from 'reactstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 export function Footer() {
 	return (
-		<footer>
-			<Container className="d-flex justify-content-start">
-				<Row className="mt-5">
-					<p> Made with ❤️ by Angelica</p>
-				</Row>
-			</Container>
+		<footer className="text-center text-lg-start bg-light text-muted">
+			<section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+				<div className="me-5 d-none d-lg-block">
+					<span>Get connected with us on social networks:</span>
+				</div>
+
+				<div>
+					<a
+						href="https://www.linkedin.com/in/angelicabayer/"
+						className="me-4 text-reset"
+					>
+						<FontAwesomeIcon size="2x" icon={faLinkedin} />
+					</a>
+					<a
+						href="https://github.com/angelicacamboim"
+						className="me-4 text-reset"
+					>
+						<FontAwesomeIcon size="2x" icon={faGithub} />
+					</a>
+				</div>
+			</section>
+
+			<div className="text-center p-4">Made with ❤️ by Angelica</div>
 		</footer>
 	)
 }

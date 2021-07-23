@@ -43,7 +43,7 @@ export function PokemonDetails() {
 										top
 										height="100%"
 										src={pokemon?.image ? pokemon?.image : Flag_of_None}
-										alt="Card image cap"
+										alt={pokemon?.name}
 									/>
 								</Col>
 								<Col>
@@ -114,7 +114,7 @@ export function PokemonDetails() {
 														<strong>{stats.stat.name}</strong>
 													</h6>
 													<Progress
-														color="secondary"
+														color="warning"
 														key={index}
 														value={stats.base_stat}
 													>

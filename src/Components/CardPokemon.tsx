@@ -16,35 +16,29 @@ export function CardPokemon(props: PokemonProps) {
 	const { pokemonSpecies } = usePokemonSpecies(props.cardName)
 
 	return (
-		<div>
-			<Card
-				className="shadow mb-5 bg-body rounded"
-				key={pokemon?.id}
-				style={{ border: '0px', textDecoration: 'none' }}
-			>
-				<Link to={`/pokemon/${pokemon?.name}`}>
-					<StyledCardImg
-						color={pokemonSpecies?.color.name}
-						top
-						width="100%"
-						src={pokemon?.image ? pokemon?.image : Flag_of_None}
-						alt="Card image cap"
-					/>
-				</Link>
-				<StyledCard>
-					<CardBody>
-						<h4 className="text-capitalize">{pokemon?.name}</h4>
-						<p className="text-capitalize">{pokemonSpecies?.generation.name}</p>
-						{pokemon?.types.map((types, index) => (
-							<span
-								key={index}
-								className={`type ${types.type.name}`}
-								style={{ marginRight: '5px' }}
-							></span>
-						))}
-					</CardBody>
-				</StyledCard>
-			</Card>
-		</div>
+		<Card className="shadow mb-5 bg-body rounded border-0" key={pokemon?.id}>
+			<Link to={`/pokemon/${pokemon?.name}`}>
+				<StyledCardImg
+					color={pokemonSpecies?.color.name}
+					top
+					width="100%"
+					src={pokemon?.image ? pokemon?.image : Flag_of_None}
+					alt={pokemon?.name}
+				/>
+			</Link>
+			<StyledCard>
+				<CardBody className="text-capitalize">
+					<h4>{pokemon?.name}</h4>
+					<p>{pokemonSpecies?.generation.name}</p>
+					{pokemon?.types.map((types, index) => (
+						<span
+							key={index}
+							className={`type ${types.type.name}`}
+							style={{ marginRight: '5px' }}
+						></span>
+					))}
+				</CardBody>
+			</StyledCard>
+		</Card>
 	)
 }

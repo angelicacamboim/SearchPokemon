@@ -28,8 +28,8 @@ export function Header(props: Props) {
 						height={10}
 						width={40}
 						handleDiameter={20}
-						offColor={shade(0.15, colors.primary)}
-						onColor={colors.secundary}
+						offColor={shade(0.15, colors.secundary)}
+						onColor={colors.primary}
 					/>
 				</Nav>
 			</Navbar>

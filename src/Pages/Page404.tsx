@@ -15,12 +15,7 @@ export function Page404() {
 								marginTop: '100px'
 							}}
 						>
-							<img
-								src={NotFound}
-								alt="Page not found"
-								width="600px"
-								className="d-none d-lg-block d-md-block"
-							/>
+							<img src={NotFound} alt="Page not found" width="400px" />
 						</Col>
 
 						<Col
@@ -30,7 +25,7 @@ export function Page404() {
 								marginTop: '20px'
 							}}
 						>
-							<h3>Page Not Found</h3>
+							<h3>Page not found</h3>
 						</Col>
 						<Col
 							style={{
