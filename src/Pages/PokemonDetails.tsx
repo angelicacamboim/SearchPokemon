@@ -80,6 +80,7 @@ export function PokemonDetails() {
 														<br></br>
 													</span>
 												))}
+												<br></br>
 											</Col>
 											<Col>
 												<h6>

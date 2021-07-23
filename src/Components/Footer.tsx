@@ -5,7 +5,7 @@ export function Footer() {
 		<footer>
 			<Container className="d-flex justify-content-start">
 				<Row className="mt-5">
-					<p>Make with ❤️ for Angelica Bayer</p>
+					<p> Made with ❤️ by Angelica</p>
 				</Row>
 			</Container>
 		</footer>
