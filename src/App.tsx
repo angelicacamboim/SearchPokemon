@@ -11,6 +11,7 @@ import { ThemeProvider, DefaultTheme } from 'styled-components'
 import light from './styles/themes/light'
 import dark from './styles/themes/dark'
 import usePeristedState from './hooks/usePersistedState'
+import { homedir } from 'os'
 
 export function App() {
 	const [theme, setTheme] = usePeristedState<DefaultTheme>('theme', light)
@@ -21,14 +22,12 @@ export function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<BrowserRouter basename="/pokemon-react">
+			<BrowserRouter>
 				<GlobalStyle />
 				<Header toggleTheme={toggleTheme} />
 				<Switch>
-					<Route path="/" exact component={Home} />
-					<Route path="/pokedex" component={Pokedex} />
-					<Route path="/pokemon/:namePokemon" component={PokemonDetails} />
-					<Route component={Page404} />
+					
+					<Route component={Home} />
 				</Switch>
 				<Footer />
 			</BrowserRouter>
