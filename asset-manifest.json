@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.js": "/pokemon-react/static/js/main.77cc1437.chunk.js",
-    "main.js.map": "/pokemon-react/static/js/main.77cc1437.chunk.js.map",
+    "main.js": "/pokemon-react/static/js/main.d28fcbe0.chunk.js",
+    "main.js.map": "/pokemon-react/static/js/main.d28fcbe0.chunk.js.map",
     "runtime-main.js": "/pokemon-react/static/js/runtime-main.7c03f0d1.js",
     "runtime-main.js.map": "/pokemon-react/static/js/runtime-main.7c03f0d1.js.map",
     "static/css/2.10c0d110.chunk.css": "/pokemon-react/static/css/2.10c0d110.chunk.css",
-    "static/js/2.f4b55a6b.chunk.js": "/pokemon-react/static/js/2.f4b55a6b.chunk.js",
-    "static/js/2.f4b55a6b.chunk.js.map": "/pokemon-react/static/js/2.f4b55a6b.chunk.js.map",
+    "static/js/2.6ffa0122.chunk.js": "/pokemon-react/static/js/2.6ffa0122.chunk.js",
+    "static/js/2.6ffa0122.chunk.js.map": "/pokemon-react/static/js/2.6ffa0122.chunk.js.map",
     "index.html": "/pokemon-react/index.html",
     "static/css/2.10c0d110.chunk.css.map": "/pokemon-react/static/css/2.10c0d110.chunk.css.map",
-    "static/js/2.f4b55a6b.chunk.js.LICENSE.txt": "/pokemon-react/static/js/2.f4b55a6b.chunk.js.LICENSE.txt",
-    "static/media/404.e2736b8a.svg": "/pokemon-react/static/media/404.e2736b8a.svg",
-    "static/media/Flag_of_None.2675d188.png": "/pokemon-react/static/media/Flag_of_None.2675d188.png",
+    "static/js/2.6ffa0122.chunk.js.LICENSE.txt": "/pokemon-react/static/js/2.6ffa0122.chunk.js.LICENSE.txt",
     "static/media/banner.72f3f006.svg": "/pokemon-react/static/media/banner.72f3f006.svg",
     "static/media/font-awesome.min.css": "/pokemon-react/static/media/fontawesome-webfont.f691f37e.woff",
     "static/media/logo.0be7a113.svg": "/pokemon-react/static/media/logo.0be7a113.svg"
@@ -19,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.7c03f0d1.js",
     "static/css/2.10c0d110.chunk.css",
-    "static/js/2.f4b55a6b.chunk.js",
-    "static/js/main.77cc1437.chunk.js"
+    "static/js/2.6ffa0122.chunk.js",
+    "static/js/main.d28fcbe0.chunk.js"
   ]
 }
