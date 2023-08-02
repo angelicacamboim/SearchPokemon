@@ -1,7 +1,7 @@
 {
   "name": "pokemon-react",
   "homepage": "https://angelicacamboim.github.io/pokemon-react",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
