@@ -26,8 +26,7 @@ export function App() {
 				<GlobalStyle />
 				<Header toggleTheme={toggleTheme} />
 				<Switch>
-					<Route component={Home} />
-					
+					<Route component={Home} />	
 				</Switch>
 				<Footer />
 			</BrowserRouter>
