@@ -20,7 +20,7 @@ export function Home() {
 								You can know the type of Pokemon, its strengths, disadvantages
 								and abilities
 							</p>
-							<StyledLink to="/pokedex">See pokemons</StyledLink>
+							<StyledLink to="/pokemon-react/pokedex">See pokemons</StyledLink>
 						</Col>
 						<Col className="d-none d-lg-block d-md-block">
 							<img src={Banner} alt="Banner" width="500px" height="428px" />

@@ -27,7 +27,9 @@ export function App() {
 				<Header toggleTheme={toggleTheme} />
 				<Switch>
 					<Route path="/pokemon-react" exact component={Home} />
-					
+					<Route path="/pokemon-react/pokedex" exact component={Pokedex} />
+					<Route path="/pokemon-react/pokemon/:namePokemon" exact component={PokemonDetails} />
+					<Route component={Page404} />	
 				</Switch>
 				<Footer />
 			</BrowserRouter>
