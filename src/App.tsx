@@ -21,13 +21,13 @@ export function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<BrowserRouter>
+			<BrowserRouter basename="/pokemon-react">
 				<GlobalStyle />
 				<Header toggleTheme={toggleTheme} />
 				<Switch>
 					<Route path="/" exact component={Home} />
-					<Route path="/pokedex" exact component={Pokedex} />
-					<Route path="/pokemon/:namePokemon" exact component={PokemonDetails} />
+					<Route path="/pokedex" component={Pokedex} />
+					<Route path="/pokemon/:namePokemon" component={PokemonDetails} />
 					<Route component={Page404} />
 				</Switch>
 				<Footer />
