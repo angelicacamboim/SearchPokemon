@@ -28,7 +28,7 @@ export function App() {
 					<Route path="/" exact component={Home} />
 					<Route path="/pokedex" exact component={Pokedex} />
 					<Route path="/pokemon/:namePokemon" exact component={PokemonDetails} />
-					<Route exact component={Page404} />
+					<Route component={Page404} />
 				</Switch>
 				<Footer />
 			</BrowserRouter>
