@@ -15,7 +15,7 @@ export function Header(props: Props) {
 	return (
 		<header className="d-flex flex-row shadow-sm p-1 mb-3 border-bottom border-white">
 			<Navbar tag={Container} className="justify-content-between" expand="md">
-				<NavbarBrand href="/">
+				<NavbarBrand href="/pokemon-react">
 					<img src={Logo} alt="Logo" width="130px" />
 				</NavbarBrand>
 
