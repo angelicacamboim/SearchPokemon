@@ -17,7 +17,7 @@ export function CardPokemon(props: PokemonProps) {
 
 	return (
 		<Card className="shadow mb-5 bg-body rounded border-0" key={pokemon?.id}>
-			<Link to={`/pokemon/${pokemon?.name}`}>
+			<Link to={`/pokemon-react/pokemon/${pokemon?.name}`}>
 				<StyledCardImg
 					color={pokemonSpecies?.color.name}
 					top
